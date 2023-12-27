@@ -65,7 +65,7 @@ globals.css
    
    ````javascript
 async function User({titulo}) {
-    const buscar = await fetch(`https://api.github.com/users/Paullo-jsx/repos/${titulo.title}`, {cache: 'no-cache'});
+    const buscar = await fetch(`https://api.github.com/users/Paullo-jsx/repos/${titulo.title}`, {cache: 'no-store'});
     const armazena = await buscar.json()
     
     return (
@@ -76,7 +76,7 @@ async function User({titulo}) {
 }
 ````
 
-``Para o Nexts.js reconhecer que isso é uma rota SSR é necessário ter o {cache: 'no-store'}``
+``Para o Nexts.js reconhecer que isso é uma rota SSR é necessário ter o {cache: 'no-store'} na variável onde é buscado os dados.``
 
   </li>
  
